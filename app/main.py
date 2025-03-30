@@ -45,9 +45,10 @@ async def health_check():
     return {"status": "healthy"}
 
 
-# Include routers here when you create them
-# from app.routers import transform
-# app.include_router(transform.router, prefix="/api/v1")
+# Include routers
+from app.routes import transform
+
+app.include_router(transform.router, prefix="/api/v1")
 
 if __name__ == "__main__":
     import uvicorn
